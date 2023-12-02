@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { carousel } from "./data";
 import Bullets from "./components/Bullets";
+import Images from "./components/images";
 
 function App() {
   const [index, setIndex] = useState(0);
@@ -35,12 +36,13 @@ function App() {
         </button>
         {carousel.map((carousel, i) => {
           return (
-            <div className={`${index !== i && "hidden"} relative`} key={i}>
-              <img src={carousel.image} alt={`image-${carousel.image}`} />
-              <div className="absolute bottom-0 w-full p-4  font-semibold bg-slate-500/50">
-                {carousel.title}
-              </div>
-            </div>
+            <Images
+              image={carousel.image}
+              title={carousel.title}
+              index={index}
+              carIndex={i}
+              key={i}
+            />
           );
         })}
 
