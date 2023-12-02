@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { carousel } from "./data";
+import Bullets from "./components/Bullets";
 
 function App() {
   const [index, setIndex] = useState(0);
@@ -28,19 +29,7 @@ function App() {
     <div>
       <h1 className="text-3xl text-center py-4">Carosello</h1>
       <div className="flex justify-center relative">
-        <div className="absolute top-0 z-10 p-2">
-          {carousel.map((dot, i) => {
-            return (
-              <i
-                onClick={() => setBullets(i)}
-                key={i}
-                className={`fa-solid fa-circle ${
-                  index !== i && "text-slate-600"
-                } cursor-pointer text-sm mr-0.5`}
-              ></i>
-            );
-          })}
-        </div>
+        <Bullets carousel={carousel} index={index} setBullets={setBullets} />
         <button onClick={prevImg} className="p-4">
           <i className="fa-solid fa-circle-arrow-left text-2xl"></i>
         </button>
