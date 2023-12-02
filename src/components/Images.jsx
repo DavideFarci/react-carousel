@@ -3,7 +3,7 @@ const Images = (props) => {
   return (
     <div className={`${index !== carIndex && "hidden"} relative`}>
       <img src={image} alt={`image-${image}`} />
-      <div className="absolute bottom-0 w-full p-4  font-semibold bg-slate-500/50">
+      <div className="absolute bottom-0 w-full p-4  font-semibold bg-blue-300/20">
         {title}
       </div>
     </div>
